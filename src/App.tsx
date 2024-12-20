@@ -56,7 +56,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard/>}></Route>
-          <Route path="/bag" element={<Bag/>}></Route>
+          <Route path="/bag" element={<Bag discs={userDiscCollection}/>}></Route>
           <Route path="/collection" element={<Collection discs={userDiscCollection}/>}></Route>
           <Route path="/*" element={<Dashboard/>}></Route>
         </Routes>
