@@ -32,9 +32,11 @@ function App() {
       <Router>
         <Header></Header>
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard/>}></Route>
           <Route path="/bag" element={<Bag/>}></Route>
           <Route path="/collection" element={<Collection/>}></Route>
+          <Route path="/*" element={<Dashboard/>}></Route>
         </Routes>
       </Router>
       <CssBaseline /> 
