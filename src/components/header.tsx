@@ -11,15 +11,15 @@ const Header = () => {
         </Typography>
 
         {/* Navigation Buttons */}
-        {/* <Button color="inherit" component={Link} to="/home">
-          Home
+        <Button color="inherit" component={Link} to="/dashboard">
+          Dashboard
         </Button>
-        <Button color="inherit" component={Link} to="/about">
-          About
+        <Button color="inherit" component={Link} to="/bag">
+          Bag
         </Button>
-        <Button color="inherit" component={Link} to="/contact">
-          Contact
-        </Button> */}
+        <Button color="inherit" component={Link} to="/collection">
+          Collection
+        </Button>
       </Toolbar>
     </AppBar>
   );

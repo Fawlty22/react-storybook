@@ -4,6 +4,8 @@ import Dashboard from './components/dashboard'
 import Header from './components/header'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Bag from './components/bag';
+import Collection from './components/collection';
 
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -31,6 +33,8 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/bag" element={<Bag/>}></Route>
+          <Route path="/collection" element={<Collection/>}></Route>
         </Routes>
       </Router>
       <CssBaseline /> 
