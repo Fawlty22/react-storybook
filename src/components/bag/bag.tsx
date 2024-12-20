@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './bag.css'
 const Bag: React.FC = () => {
   return (
     <div>

@@ -1,45 +1,89 @@
 // Dashboard.jsx
-import { Box, Drawer, List, ListItem, ListItemText, Typography, Container } from '@mui/material';
-import Header from '../header/header';
-
+import Bag from '../bag/bag';
+import React, { useState } from 'react';
+import {
+  Drawer,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Card,
+  CardContent,
+  Box,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 const drawerWidth = 240;
 
 const Dashboard = () => {
+  const [open, setOpen] = useState(false);
+
+  // Toggle drawer open/close
+  const toggleDrawer = () => setOpen(!open);
+
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Header />
-      <Drawer
+    <Box sx={{ display: 'flex', height: '100%'}}>
+      {/* Main Content */}
+      <Box
+        component="main"
         sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
+          flexGrow: 1,
+          backgroundColor: '#f5f5f5',
+          padding: '20px',
         }}
-        variant="permanent"
-        anchor="left"
       >
-        {/* <List>
-          <ListItem button>
-            <ListItemText primary="Overview" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Analytics" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Settings" />
-          </ListItem>
-        </List> */}
-      </Drawer>
-      <Container maxWidth="lg" sx={{ marginLeft: `${drawerWidth}px` }}>
-        <Typography variant="h4" gutterBottom>
-          Welcome to your Dashboard
-        </Typography>
-        <Typography variant="body1">
-          Here you can see your analytics, settings, and more!
-        </Typography>
-      </Container>
+        {/* App Bar */}
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="menu"
+              edge="start"
+              onClick={toggleDrawer}
+              sx={{
+                mr: 2,
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6">Dashboard</Typography>
+          </Toolbar>
+        </AppBar>
+
+        {/* Main Cards Section */}
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '20px',
+            marginTop: '20px',
+            flexWrap: 'wrap',
+          }}
+        >
+          {/* Bag Card */}
+          <Card sx={{ minWidth: 275, flex: 1 }}>
+            <CardContent>
+              <Typography variant="h5" component="div">
+                Bag
+              </Typography>
+              <Typography sx={{ mt: 2 }} color="text.secondary">
+                Manage your bag items here.
+              </Typography>
+            </CardContent>
+          </Card>
+
+          {/* Collection Card */}
+          <Card sx={{ minWidth: 275, flex: 1 }}>
+            <CardContent>
+              <Typography variant="h5" component="div">
+                Collection
+              </Typography>
+              <Typography sx={{ mt: 2 }} color="text.secondary">
+                Manage your collection here.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Box>
+      </Box>
     </Box>
   );
 };
