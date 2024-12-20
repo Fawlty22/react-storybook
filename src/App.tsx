@@ -2,9 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Dashboard from './components/dashboard'
 import Header from './components/header'
-import Bag from './components/bag'
-import { createTheme, ThemeProvider, CssBaseline, Switch } from '@mui/material';
-
+import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
+import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -28,9 +27,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Header></Header> */}
+      <Router>
+        <Header></Header>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard/>}></Route>
+        </Routes>
+      </Router>
       <CssBaseline /> 
-      <Dashboard></Dashboard>
     </ThemeProvider>
   );
 }
