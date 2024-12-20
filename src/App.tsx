@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Dashboard from './components/dashboard/dashboard'
-import Header from './components/header/header'
-import Bag from './components/bag/bag'
+import Dashboard from './components/dashboard'
+import Header from './components/header'
+import Bag from './components/bag'
 import { createTheme, ThemeProvider, CssBaseline, Switch } from '@mui/material';
 
 

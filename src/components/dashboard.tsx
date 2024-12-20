@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import Bag from '../bag/bag';
+import Bag from './bag';
 import React, { useState } from 'react';
 import {
   Drawer,
