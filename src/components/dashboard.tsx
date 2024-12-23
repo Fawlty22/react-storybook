@@ -1,8 +1,7 @@
 // Dashboard.jsx
-import Bag from './bag';
+
 import React, { useState } from 'react';
 import {
-  Drawer,
   AppBar,
   Toolbar,
   Typography,
@@ -12,7 +11,6 @@ import {
   Box,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-const drawerWidth = 240;
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
