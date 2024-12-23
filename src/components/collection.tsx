@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import { Typography } from '@mui/material';
 import DiscCategory from './disc-category';
@@ -11,12 +11,16 @@ interface CollectionProps {
 
 
 const Collection: React.FC<CollectionProps> = ({ discs }) => {
+  const [discsState, setDiscsState] = useState<DiscDto[]>(discs);
   const toggleInBag = async (id: number, disc: DiscDto) => {
-    const response = await updateDisc(id, disc)
-    console.log(response);
-  }
+      const updatedDisc = await updateDisc(id, disc);
 
-  const categorizedDiscs = discs.reduce<{ [key: string]: DiscDto[] }>((acc, disc) => {
+      setDiscsState(prevState => 
+        prevState.map(d => (d.id === id ? updatedDisc : d))
+      );
+  };
+
+  const categorizedDiscs = discsState.reduce<{ [key: string]: DiscDto[] }>((acc, disc) => {
     if (!acc[disc.category]) {
       acc[disc.category] = [];
     }

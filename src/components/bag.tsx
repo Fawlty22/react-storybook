@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import {Typography} from '@mui/material';
 import DiscCategory from './disc-category';
@@ -8,16 +8,24 @@ interface BagProps {
   discs: DiscDto[];
   bagToggler: (id: number, disc: DiscDto) => Promise<void>;
 }
-const toggleInBag = async (id: number, disc: DiscDto) => {
-  await updateDisc(id, disc);
-}
+
 
 const Bag: React.FC<BagProps> = ({ discs }) => {
   // Filter discs to only show those in the bag
   const discsInBag = discs.filter(disc => disc.inBag);
+  
+  const [discsState, setDiscsState] = useState<DiscDto[]>(discsInBag);
+  
 
+  const toggleInBag = async (id: number, disc: DiscDto) => {
+    const updatedDisc = await updateDisc(id, disc);
+    
+    setDiscsState(prevState => 
+      prevState.map(d => (d.id === id ? updatedDisc : d))
+    );
+  }
   // Group discs by category
-  const categorizedDiscs = discsInBag.reduce<{ [key: string]: DiscDto[] }>((acc, disc) => {
+  const categorizedDiscs = discsState.reduce<{ [key: string]: DiscDto[] }>((acc, disc) => {
     if (!acc[disc.category]) {
       acc[disc.category] = [];
     }

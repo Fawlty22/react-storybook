@@ -41,7 +41,7 @@
     {
       "id": "3",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Destroyer",
       "brand": "Innova",
       "category": "Distance Driver",
@@ -89,7 +89,7 @@
     {
       "id": "7",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Zombee",
       "brand": "Discraft",
       "category": "Putter",
@@ -161,7 +161,7 @@
     {
       "id": "13",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Maverick",
       "brand": "Innova",
       "category": "Fairway Driver",
