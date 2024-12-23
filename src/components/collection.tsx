@@ -34,7 +34,7 @@ const Collection: React.FC<CollectionProps> = ({ discs }) => {
 
       {/* Loop over each category */}
       {Object.keys(categorizedDiscs).map((category) => (
-        <DiscCategory category={category} categorizedDiscs={categorizedDiscs} bagToggler={toggleInBag}/>
+        <DiscCategory key={'cat' + category} category={category} categorizedDiscs={categorizedDiscs} bagToggler={toggleInBag}/>
       ))}
     </div>
   );

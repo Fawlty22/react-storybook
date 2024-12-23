@@ -17,7 +17,7 @@
     {
       "id": "1",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Aviar",
       "brand": "Discmania",
       "category": "Putter",
@@ -29,7 +29,7 @@
     {
       "id": "2",
       "userId": 1,
-      "inBag": false,
+      "inBag": true,
       "name": "Buzzz",
       "brand": "Discraft",
       "category": "Midrange",
@@ -41,7 +41,7 @@
     {
       "id": "3",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Destroyer",
       "brand": "Innova",
       "category": "Distance Driver",
@@ -125,7 +125,7 @@
     {
       "id": "10",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Roc3",
       "brand": "Discraft",
       "category": "Midrange",
@@ -137,7 +137,7 @@
     {
       "id": "11",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Wraith",
       "brand": "Innova",
       "category": "Distance Driver",
@@ -149,7 +149,7 @@
     {
       "id": "12",
       "userId": 1,
-      "inBag": false,
+      "inBag": true,
       "name": "Valkyrie",
       "brand": "Innova",
       "category": "Fairway Driver",
@@ -173,7 +173,7 @@
     {
       "id": "14",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Aero",
       "brand": "Discraft",
       "category": "Putter",
@@ -185,7 +185,7 @@
     {
       "id": "15",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Stingray",
       "brand": "Innova",
       "category": "Midrange",

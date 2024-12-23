@@ -6,7 +6,6 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Bag from './components/bag';
 import Collection from './components/collection';
-import { Disc } from './interfaces/disc.interface';
 
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -56,8 +55,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard/>}></Route>
-          <Route path="/bag" element={<Bag discs={userDiscCollection}/>}></Route>
-          <Route path="/collection" element={<Collection discs={userDiscCollection}/>}></Route>
+          <Route path="/bag" element={<Bag discs={userDiscCollection} setUserDiscCollection={setUserDiscCollection}/>}></Route>
+          <Route path="/collection" element={<Collection discs={userDiscCollection} setUserDiscCollection={setUserDiscCollection}/>}></Route>
           <Route path="/*" element={<Dashboard/>}></Route>
         </Routes>
       </Router>

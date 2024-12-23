@@ -1,13 +1,8 @@
 import React from "react";
 import { DiscDto } from "../interfaces/disc.interface";
 import {
-  Card,
-  CardContent,
   Typography,
   Grid,
-  Chip,
-  Button,
-  CardActions,
 } from "@mui/material";
 import Disc from "./disc";
 
@@ -28,7 +23,7 @@ const DiscCategory: React.FC<DiscProps> = ({ categorizedDiscs, category, bagTogg
       <Grid container spacing={2}>
         {categorizedDiscs[category].map((disc) => (
           <Grid item key={disc.id} xs={12} sm={6} md={4} lg={3}>
-            <Disc disc={disc} bagToggler={bagToggler}/>
+            <Disc key={'disc'+ disc.id} disc={disc} bagToggler={bagToggler}/>
           </Grid>
         ))}
       </Grid>
