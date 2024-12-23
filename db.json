@@ -89,7 +89,7 @@
     {
       "id": "7",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Zombee",
       "brand": "Discraft",
       "category": "Putter",

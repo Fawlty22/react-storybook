@@ -11,9 +11,10 @@ const api = axios.create({
 });
 
 // A function to fetch Discs
-export const fetchDiscs = async () => {
+export const fetchDiscs = async (): Promise<DiscDto[]>  => {
     try {
-        return api.get('/discs');
+        const response = await api.get('/discs');
+        return response.data
     } catch (error) {
         throw error
     }

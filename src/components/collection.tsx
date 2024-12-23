@@ -1,17 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import { Typography } from '@mui/material';
 import DiscCategory from './disc-category';
-import { updateDisc } from '../services/disc.service';
+import { fetchDiscs, updateDisc } from '../services/disc.service';
 
-interface CollectionProps {
-  discs: DiscDto[];
-}
+const Collection: React.FC = () => {
+  const [discsState, setDiscsState] = useState<DiscDto[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    
+    const fetchData = async () => {
+      try {
+        const discsData = await fetchDiscs();
+        setDiscsState(discsData);
+        setLoading(false);
+      } catch (error: any) {
+        setError(error.message ?? 'something went wrong');
+      }
 
-const Collection: React.FC<CollectionProps> = ({ discs }) => {
-  const [discsState, setDiscsState] = useState<DiscDto[]>(discs);
-  
+      
+    }
+
+    fetchData();
+  }, []);
+
   const toggleInBag = async (id: number, disc: DiscDto) => {
       const updatedDisc = await updateDisc(id, disc);
 
