@@ -1,6 +1,7 @@
 // Dashboard.jsx
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -14,6 +15,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
+
 
   // Toggle drawer open/close
   const toggleDrawer = () => setOpen(!open);
@@ -58,7 +61,7 @@ const Dashboard = () => {
           }}
         >
           {/* Bag Card */}
-          <Card sx={{ minWidth: 275, flex: 1 }}>
+          <Card sx={{ minWidth: 275, flex: 1 }} onClick={()=> navigate('/bag')}>
             <CardContent>
               <Typography variant="h5" component="div">
                 Bag
@@ -70,7 +73,7 @@ const Dashboard = () => {
           </Card>
 
           {/* Collection Card */}
-          <Card sx={{ minWidth: 275, flex: 1 }}>
+          <Card sx={{ minWidth: 275, flex: 1 }} onClick={()=> navigate('/collection')} >
             <CardContent>
               <Typography variant="h5" component="div">
                 Collection
