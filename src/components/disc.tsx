@@ -10,9 +10,15 @@ import {
 } from "@mui/material";
 interface DiscProps {
     disc: DiscDto;
+    bagToggler: (id: number, disc: DiscDto) => Promise<void>
 }
 
-const Disc: React.FC<DiscProps> = ({ disc }) => {
+const Disc: React.FC<DiscProps> = ({ disc, bagToggler }) => {
+
+    const handleClick = async () => {
+        const updatedDisc = { ...disc, inBag: !disc.inBag };
+        await bagToggler(disc.id, updatedDisc); 
+      };
 
     return (
         <Card
@@ -48,8 +54,8 @@ const Disc: React.FC<DiscProps> = ({ disc }) => {
           
         </CardContent>
         <CardActions>
-          <Button size="small" variant="contained" color="primary">
-            Add
+          <Button size="small" variant="contained" color={disc.inBag ? "primary" : "secondary"} onClick={handleClick}>
+          {disc.inBag ? 'Remove from Bag' : 'Add to Bag'}
           </Button>
         </CardActions>
       </Card>

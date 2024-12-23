@@ -2,8 +2,14 @@ import React from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import {Typography} from '@mui/material';
 import DiscCategory from './disc-category';
+import { updateDisc } from '../services/disc.service';
+
 interface BagProps {
   discs: DiscDto[];
+  bagToggler: (id: number, disc: DiscDto) => Promise<void>;
+}
+const toggleInBag = async (id: number, disc: DiscDto) => {
+  await updateDisc(id, disc);
 }
 
 const Bag: React.FC<BagProps> = ({ discs }) => {
@@ -21,7 +27,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
 
   return (
     <div className='container'>
-      <Typography variant="h4" gutterBottom>Discs in Bag</Typography>
+      <Typography variant="h4" textAlign={'center'} gutterBottom>Bag</Typography>
 
       {/* If no discs in the bag */}
       {discsInBag.length === 0 ? (
@@ -30,7 +36,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
         </Typography>
       ) : (
         Object.keys(categorizedDiscs).map((category) => (
-          <DiscCategory categorizedDiscs={categorizedDiscs} category={category} />
+          <DiscCategory categorizedDiscs={categorizedDiscs} category={category} bagToggler={toggleInBag} />
         ))
       )}
     </div>

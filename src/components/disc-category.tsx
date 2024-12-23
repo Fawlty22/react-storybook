@@ -14,9 +14,10 @@ import Disc from "./disc";
 interface DiscProps {
   categorizedDiscs: { [key: string]: DiscDto[] };
   category: string;
+  bagToggler: (id: number, disc: DiscDto) => Promise<void>
 }
 
-const DiscCategory: React.FC<DiscProps> = ({ categorizedDiscs, category }) => {
+const DiscCategory: React.FC<DiscProps> = ({ categorizedDiscs, category, bagToggler}) => {
   return (
     <div key={category} style={{ marginBottom: "2rem" }}>
       <Typography variant="h5" gutterBottom>
@@ -27,7 +28,7 @@ const DiscCategory: React.FC<DiscProps> = ({ categorizedDiscs, category }) => {
       <Grid container spacing={2}>
         {categorizedDiscs[category].map((disc) => (
           <Grid item key={disc.id} xs={12} sm={6} md={4} lg={3}>
-            <Disc disc={disc} />
+            <Disc disc={disc} bagToggler={bagToggler}/>
           </Grid>
         ))}
       </Grid>
