@@ -1,7 +1,7 @@
 import React from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import { Card, CardContent, Typography, Chip, Box, Divider } from '@mui/material';
-
+import Disc from './disc';
 interface BagProps {
   discs: DiscDto[];
 }
@@ -30,41 +30,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
         </Typography>
       ) : (
         Object.keys(categorizedDiscs).map((category) => (
-          <Box key={category} mb={3}>
-            {/* Category Header */}
-            <Typography variant="h5" component="h2" gutterBottom>
-              {category}
-            </Typography>
-            <Divider sx={{ mb: 2 }} />
-
-            {/* Grid of cards for each category */}
-            <Box display="flex" flexWrap="wrap" gap={2}>
-              {categorizedDiscs[category].map((disc) => (
-                <Box key={disc.id} flexBasis="calc(33.33% - 16px)" mb={2}>
-                  {/* Card for each disc */}
-                  <Card variant="outlined" sx={{ height: '100%' }}>
-                    <CardContent>
-                      <Typography variant="h6" component="div">
-                        {disc.name}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        {disc.brand}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" sx={{ marginBottom: '10px' }}>
-                        Speed: {disc.speed} | Glide: {disc.glide} | Turn: {disc.turn} | Fade: {disc.fade}
-                      </Typography>
-                      <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <Chip label="In Bag" color="primary" size="small" />
-                        <Typography variant="body2" color="textSecondary">
-                          Category: {disc.category}
-                        </Typography>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Box>
-              ))}
-            </Box>
-          </Box>
+          <Disc categorizedDiscs={categorizedDiscs} category={category} />
         ))
       )}
     </div>
