@@ -6,8 +6,6 @@ import { updateDisc } from '../services/disc.service';
 
 interface BagProps {
   discs: DiscDto[];
-  bagToggler: (id: number, disc: DiscDto) => Promise<void>;
-  setUserDiscCollection: React.Dispatch<React.SetStateAction<DiscDto[]>>;
 }
 
 

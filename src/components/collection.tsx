@@ -6,12 +6,12 @@ import { updateDisc } from '../services/disc.service';
 
 interface CollectionProps {
   discs: DiscDto[];
-  bagToggler: (id: number, disc: DiscDto) => Promise<DiscDto>;
 }
 
 
 const Collection: React.FC<CollectionProps> = ({ discs }) => {
   const [discsState, setDiscsState] = useState<DiscDto[]>(discs);
+  
   const toggleInBag = async (id: number, disc: DiscDto) => {
       const updatedDisc = await updateDisc(id, disc);
 
