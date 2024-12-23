@@ -1,9 +1,9 @@
 import React from 'react';
-import { Disc } from '../interfaces/disc.interface';
+import { DiscDto } from '../interfaces/disc.interface';
 import { Card, CardContent, Typography, Chip, Box, Divider } from '@mui/material';
 
 interface BagProps {
-  discs: Disc[];
+  discs: DiscDto[];
 }
 
 const Bag: React.FC<BagProps> = ({ discs }) => {
@@ -11,7 +11,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
   const discsInBag = discs.filter(disc => disc.inBag);
 
   // Group discs by category
-  const categorizedDiscs = discsInBag.reduce<{ [key: string]: Disc[] }>((acc, disc) => {
+  const categorizedDiscs = discsInBag.reduce<{ [key: string]: DiscDto[] }>((acc, disc) => {
     if (!acc[disc.category]) {
       acc[disc.category] = [];
     }
@@ -20,7 +20,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
   }, {});
 
   return (
-    <div>
+    <div className='container'>
       <Typography variant="h4" gutterBottom>Discs in Bag</Typography>
 
       {/* If no discs in the bag */}

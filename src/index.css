@@ -19,3 +19,7 @@
   flex: 1;
   margin: 0;
 }
+
+.container {
+  padding: 16px
+}

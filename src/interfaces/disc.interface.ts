@@ -1,4 +1,4 @@
-export interface Disc {
+export interface DiscDto {
   id: number;
   name: string;
   brand: string;
