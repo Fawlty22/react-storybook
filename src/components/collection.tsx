@@ -1,7 +1,7 @@
 import React from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import { Typography } from '@mui/material';
-import Disc from './disc';
+import DiscCategory from './disc-category';
 interface CollectionProps {
   discs: DiscDto[];
 }
@@ -22,7 +22,7 @@ const Collection: React.FC<CollectionProps> = ({ discs }) => {
 
       {/* Loop over each category */}
       {Object.keys(categorizedDiscs).map((category) => (
-        <Disc category={category} categorizedDiscs={categorizedDiscs} />
+        <DiscCategory category={category} categorizedDiscs={categorizedDiscs} />
       ))}
     </div>
   );

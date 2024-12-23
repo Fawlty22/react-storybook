@@ -1,7 +1,7 @@
 import React from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
-import { Card, CardContent, Typography, Chip, Box, Divider } from '@mui/material';
-import Disc from './disc';
+import {Typography} from '@mui/material';
+import DiscCategory from './disc-category';
 interface BagProps {
   discs: DiscDto[];
 }
@@ -30,7 +30,7 @@ const Bag: React.FC<BagProps> = ({ discs }) => {
         </Typography>
       ) : (
         Object.keys(categorizedDiscs).map((category) => (
-          <Disc categorizedDiscs={categorizedDiscs} category={category} />
+          <DiscCategory categorizedDiscs={categorizedDiscs} category={category} />
         ))
       )}
     </div>
