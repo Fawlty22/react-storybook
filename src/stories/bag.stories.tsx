@@ -1,14 +1,14 @@
 // src/stories/Bag.stories.tsx
 import React from 'react';
 import Bag from '../components/bag';
-import { Disc } from '../interfaces/disc.interface';
+import { DiscDto } from '../interfaces/disc.interface';
 
 export default {
   title: 'Components/Bag',
   component: Bag,
 };
 
-const sampleDiscs: Disc[] = [
+const sampleDiscs: DiscDto[] = [
   {
     id: 1,
     inBag: true,
@@ -19,6 +19,7 @@ const sampleDiscs: Disc[] = [
     glide: 5,
     turn: -1,
     fade: 3,
+    userId: 1
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const sampleDiscs: Disc[] = [
     glide: 3,
     turn: 0,
     fade: 1,
+    userId: 1
   },
   {
     id: 3,
@@ -41,10 +43,14 @@ const sampleDiscs: Disc[] = [
     glide: 4,
     turn: -1,
     fade: 1,
+    userId: 1
   },
 ];
 
-const EmptyBag: Disc[] = [];
+const EmptyBag: DiscDto[] = [];
 
-export const WithDiscs = () => <Bag discs={sampleDiscs} />;
-export const Empty = () => <Bag discs={EmptyBag} />;
+export const WithDiscs = () => <Bag  />;
+export const Empty = () => <Bag />;
+
+
+

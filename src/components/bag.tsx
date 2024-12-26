@@ -61,7 +61,7 @@ const Bag: React.FC = () => {
         </Typography>
       ) : (
         Object.keys(categorizedDiscs).map((category) => (
-          <DiscCategory categorizedDiscs={categorizedDiscs} category={category} bagToggler={toggleInBag} />
+          <DiscCategory categorizedDiscs={categorizedDiscs[category]} category={category} bagToggler={toggleInBag} />
         ))
       )}
     </div>

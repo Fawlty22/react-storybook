@@ -29,7 +29,7 @@
     {
       "id": "2",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Buzzz",
       "brand": "Discraft",
       "category": "Midrange",
@@ -41,7 +41,7 @@
     {
       "id": "3",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Destroyer",
       "brand": "Innova",
       "category": "Distance Driver",
@@ -53,7 +53,7 @@
     {
       "id": "4",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Teebird",
       "brand": "Innova",
       "category": "Fairway Driver",

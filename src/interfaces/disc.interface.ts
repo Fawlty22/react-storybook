@@ -8,4 +8,5 @@ export interface DiscDto {
   turn: number;
   fade: number;
   inBag: boolean;
+  userId: number;
 }
