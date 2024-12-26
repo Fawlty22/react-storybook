@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { DiscDto } from '../interfaces/disc.interface';
 import { Typography } from '@mui/material';
-import DiscCategory from './disc-category';
+import DiscCategory from '../components/disc-category';
 import { fetchDiscs, updateDisc } from '../services/disc.service';
 
 const Collection: React.FC = () => {

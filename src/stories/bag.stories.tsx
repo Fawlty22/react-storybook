@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
-import Bag from '../components/bag';
+import Bag from '../pages/bag';
 
 export default {
-  title: 'Components/Bag',
+  title: 'Pages/Bag',
   component: Bag,
 } as Meta;
 

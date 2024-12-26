@@ -1,11 +1,9 @@
 // src/stories/Bag.stories.tsx
 
 
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import DiscCategory from "../components/disc-category";
 import { DiscDto } from "../interfaces/disc.interface";
-import { jest } from '@jest/globals';
 
 // Mock data
 const mockDiscs: DiscDto[] = [
@@ -36,7 +34,7 @@ const mockDiscs: DiscDto[] = [
 ];
 
 // Mock bagToggler
-const mockBagToggler = jest.fn((id: number, disc: DiscDto) => Promise.resolve());
+const mockBagToggler = async () => {}
 
 // Story setup
 export default {

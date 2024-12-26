@@ -1,11 +1,11 @@
-import { useState, useEffect} from 'react'
+import { useState } from 'react'
 import './App.css'
 import Dashboard from './pages/dashboard'
 import Header from './components/header'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Bag from './components/bag';
-import Collection from './components/collection';
+import Bag from './pages/bag';
+import Collection from './pages/collection';
  
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;

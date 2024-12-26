@@ -1,49 +1,15 @@
 // src/stories/Collection.stories.tsx
-import Collection from '../components/collection';
-import { DiscDto } from '../interfaces/disc.interface';
+import Collection from '../pages/collection';
+import { Meta, StoryFn } from '@storybook/react';
 
 export default {
-  title: 'Components/Collection',
+  title: 'Pages/Collection',
   component: Collection,
+} as Meta;
+
+const Template: StoryFn = (args) => <Collection {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+
 };
-
-const sampleDiscs: DiscDto[] = [
-  {
-    id: 1,
-    inBag: true,
-    name: 'Destroyer',
-    brand: 'Innova',
-    category: 'Driver',
-    speed: 12,
-    glide: 5,
-    turn: -1,
-    fade: 3,
-    userId: 2
-  },
-  {
-    id: 2,
-    inBag: true,
-    name: 'Aviar',
-    brand: 'Discmania',
-    category: 'Putter',
-    speed: 3,
-    glide: 3,
-    turn: 0,
-    fade: 1,
-    userId: 2
-  },
-  {
-    id: 3,
-    inBag: false,
-    name: 'Buzzz',
-    brand: 'Discraft',
-    category: 'Midrange',
-    speed: 5,
-    glide: 4,
-    turn: -1,
-    fade: 1,
-    userId: 2
-  },
-];
-
-export const Default = () => <Collection />;
