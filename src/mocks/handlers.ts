@@ -6,7 +6,7 @@ const sampleDiscs: DiscDto[] = [
     "id": 1,
     "userId": 1,
     "inBag": true,
-    "name": "Aviar",
+    "name": "Aviar", 
     "brand": "Discmania",
     "category": "Putter",
     "speed": 3,
@@ -19,7 +19,7 @@ const sampleDiscs: DiscDto[] = [
     "userId": 1,
     "inBag": true,
     "name": "Buzzz",
-    "brand": "Discraft",
+    "brand": "Discraft", 
     "category": "Midrange",
     "speed": 5,
     "glide": 4,
@@ -100,15 +100,20 @@ const sampleDiscs: DiscDto[] = [
   },
 ];
 
+export const getAllDiscs = http.get('http://localhost:3000/discs', ({}) => {
+  return HttpResponse.json(sampleDiscs, {status: 200});
+});
+
+export const getEmptyDiscs = http.get('http://localhost:3000/discs', ({}) => {
+  return HttpResponse.json([], {status: 200});
+});
+
+export const updateDisc = http.put('http://localhost:3000/discs/:id', async ({request}) => {
+  const updatedDisc = await request.json()
+  return HttpResponse.json(updatedDisc);
+});
+
 export const handlers = [
-
-  http.get('http://localhost:3000/discs', ({}) => {
-    return HttpResponse.json(sampleDiscs, {status: 200}); 
-  }),
-
-  http.put('http://localhost:3000/discs/:id', async ({request}) => {
-    const updatedDisc = await request.json() 
-    return HttpResponse.json(updatedDisc);
-  }),
-
+  getAllDiscs,
+  updateDisc
 ];
