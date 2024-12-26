@@ -6,30 +6,13 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Bag from './components/bag';
 import Collection from './components/collection';
-
+ 
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
   const [userDiscCollection, setUserDiscCollection] = useState([]);
   
-  // useEffect(() => {
-  //   // Replace with your actual API endpoint or JSON server
-  //   fetch('http://localhost:3000/discs')
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch data');
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setUserDiscCollection(data);  // Set the fetched data to the state
-  //       setLoading(false); // Set loading to false after data is fetched
-  //     })
-  //     .catch((err) => {
-  //       setError(err.message); // Handle error if fetch fails
-  //       setLoading(false); // Set loading to false in case of error
-  //     });
-  // }, []);
+
 
   const theme = createTheme({
     palette: {

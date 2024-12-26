@@ -17,7 +17,7 @@
     {
       "id": "1",
       "userId": 1,
-      "inBag": false,
+      "inBag": true,
       "name": "Aviar",
       "brand": "Discmania",
       "category": "Putter",
@@ -89,7 +89,7 @@
     {
       "id": "7",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Zombee",
       "brand": "Discraft",
       "category": "Putter",
@@ -173,7 +173,7 @@
     {
       "id": "14",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Aero",
       "brand": "Discraft",
       "category": "Putter",
@@ -185,7 +185,7 @@
     {
       "id": "15",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Stingray",
       "brand": "Innova",
       "category": "Midrange",

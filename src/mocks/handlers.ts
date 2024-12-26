@@ -1,11 +1,5 @@
-// src/stories/Collection.stories.tsx
-import Collection from '../components/collection';
+import { http, HttpResponse} from 'msw';
 import { DiscDto } from '../interfaces/disc.interface';
-
-export default {
-  title: 'Components/Collection',
-  component: Collection,
-};
 
 const sampleDiscs: DiscDto[] = [
   {
@@ -18,7 +12,7 @@ const sampleDiscs: DiscDto[] = [
     glide: 5,
     turn: -1,
     fade: 3,
-    userId: 2
+    userId: 1,
   },
   {
     id: 2,
@@ -30,7 +24,7 @@ const sampleDiscs: DiscDto[] = [
     glide: 3,
     turn: 0,
     fade: 1,
-    userId: 2
+    userId: 1,
   },
   {
     id: 3,
@@ -42,8 +36,19 @@ const sampleDiscs: DiscDto[] = [
     glide: 4,
     turn: -1,
     fade: 1,
-    userId: 2
+    userId: 1,
   },
 ];
 
-export const Default = () => <Collection />;
+export const handlers = [
+
+  http.get('http://localhost:3000/discs', ({}) => {
+    return HttpResponse.json(sampleDiscs, {status: 200}); 
+  }),
+
+  http.put('http://localhost:3000/discs/:id', async ({request}) => {
+    const updatedDisc = await request.json() 
+    return HttpResponse.json(updatedDisc);
+  }),
+
+];

@@ -2,7 +2,7 @@
 
 
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import DiscCategory from "../components/disc-category";
 import { DiscDto } from "../interfaces/disc.interface";
 import { jest } from '@jest/globals';
@@ -44,7 +44,7 @@ export default {
   component: DiscCategory,
 } as Meta<typeof DiscCategory>;
 
-const Template: Story<typeof DiscCategory> = (args: any) => (
+const Template: StoryFn<typeof DiscCategory> = (args: any) => (
   <DiscCategory {...args} />
 );
 
