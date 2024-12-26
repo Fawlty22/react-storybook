@@ -10,7 +10,6 @@ import Collection from './pages/collection';
 function App() {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
-  const [userDiscCollection, setUserDiscCollection] = useState([]);
   
 
 

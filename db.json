@@ -17,9 +17,9 @@
     {
       "id": "1",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Aviar",
-      "brand": "Discmania",
+      "brand": "Innova",
       "category": "Putter",
       "speed": 3,
       "glide": 3,
@@ -29,7 +29,7 @@
     {
       "id": "2",
       "userId": 1,
-      "inBag": false,
+      "inBag": true,
       "name": "Buzzz",
       "brand": "Discraft",
       "category": "Midrange",
@@ -65,7 +65,7 @@
     {
       "id": "5",
       "userId": 1,
-      "inBag": false,
+      "inBag": true,
       "name": "Mako3",
       "brand": "Innova",
       "category": "Midrange",
@@ -77,9 +77,9 @@
     {
       "id": "6",
       "userId": 2,
-      "inBag": true,
-      "name": "Rock3",
-      "brand": "Discraft",
+      "inBag": false,
+      "name": "Roc3",
+      "brand": "Innova",
       "category": "Midrange",
       "speed": 5,
       "glide": 4,
@@ -89,7 +89,7 @@
     {
       "id": "7",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Zombee",
       "brand": "Discraft",
       "category": "Putter",
@@ -101,8 +101,8 @@
     {
       "id": "8",
       "userId": 1,
-      "inBag": false,
-      "name": "Champion Eagle",
+      "inBag": true,
+      "name": "Eagle",
       "brand": "Innova",
       "category": "Fairway Driver",
       "speed": 7,
@@ -137,7 +137,7 @@
     {
       "id": "11",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Wraith",
       "brand": "Innova",
       "category": "Distance Driver",
@@ -149,7 +149,7 @@
     {
       "id": "12",
       "userId": 1,
-      "inBag": true,
+      "inBag": false,
       "name": "Valkyrie",
       "brand": "Innova",
       "category": "Fairway Driver",
@@ -173,9 +173,9 @@
     {
       "id": "14",
       "userId": 2,
-      "inBag": true,
+      "inBag": false,
       "name": "Aero",
-      "brand": "Discraft",
+      "brand": "Innova",
       "category": "Putter",
       "speed": 2,
       "glide": 3,
@@ -185,7 +185,7 @@
     {
       "id": "15",
       "userId": 2,
-      "inBag": false,
+      "inBag": true,
       "name": "Stingray",
       "brand": "Innova",
       "category": "Midrange",
