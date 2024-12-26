@@ -24,7 +24,8 @@
       "speed": 3,
       "glide": 3,
       "turn": 0,
-      "fade": 1
+      "fade": 1,
+      "color": "#f60101"
     },
     {
       "id": "2",
@@ -36,7 +37,8 @@
       "speed": 5,
       "glide": 4,
       "turn": -1,
-      "fade": 1
+      "fade": 1,
+      "color": "#98128f"
     },
     {
       "id": "3",
@@ -72,7 +74,8 @@
       "speed": 5,
       "glide": 5,
       "turn": 0,
-      "fade": 0
+      "fade": 0,
+      "color": "#f60101"
     },
     {
       "id": "6",
@@ -96,7 +99,8 @@
       "speed": 2,
       "glide": 3,
       "turn": 0,
-      "fade": 1
+      "fade": 1,
+      "color": "#862626"
     },
     {
       "id": "8",
@@ -108,7 +112,8 @@
       "speed": 7,
       "glide": 4,
       "turn": -1,
-      "fade": 2
+      "fade": 2,
+      "color": "#158049"
     },
     {
       "id": "9",
@@ -120,7 +125,8 @@
       "speed": 12,
       "glide": 5,
       "turn": -1,
-      "fade": 2
+      "fade": 2,
+      "color": "#e312a9"
     },
     {
       "id": "10",
@@ -180,7 +186,8 @@
       "speed": 2,
       "glide": 3,
       "turn": 0,
-      "fade": 1
+      "fade": 1,
+      "color": "#a3c8d0"
     },
     {
       "id": "15",
@@ -192,7 +199,8 @@
       "speed": 5,
       "glide": 5,
       "turn": -3,
-      "fade": 1
+      "fade": 1,
+      "color": "#cae549"
     }
   ]
 }

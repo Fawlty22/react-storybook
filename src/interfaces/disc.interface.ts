@@ -9,4 +9,5 @@ export interface DiscDto {
   fade: number;
   inBag: boolean;
   userId: number;
+  color: string;
 }

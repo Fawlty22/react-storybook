@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DiscDto } from "../interfaces/disc.interface";
 import {
   Card,
@@ -11,8 +11,9 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import { HexColorPicker } from "react-colorful";
-import ColorLensIcon from '@mui/icons-material/ColorLens';
 import Popover from '@mui/material/Popover';
+import { updateDisc } from "../services/disc.service";
+import PaletteIcon from '@mui/icons-material/Palette';
 
 interface DiscProps {
     disc: DiscDto;
@@ -20,8 +21,13 @@ interface DiscProps {
 }
 
 const Disc: React.FC<DiscProps> = ({ disc, bagToggler }) => {
-  const [color, setColor] = useState("#aabbcc");
+  const [color, setColor] = useState(disc.color);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+  const handleColorChange = (newColor: string) => {
+    setColor(newColor);
+    updateDisc(disc.id, { ...disc, color: newColor });
+  };
 
   const handleColorClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -72,6 +78,7 @@ const Disc: React.FC<DiscProps> = ({ disc, bagToggler }) => {
                 }
               }}
             >
+              {!color && <PaletteIcon/>}
             </IconButton>
             <Popover
               open={open}
@@ -85,8 +92,9 @@ const Disc: React.FC<DiscProps> = ({ disc, bagToggler }) => {
                 vertical: 'top',
                 horizontal: 'center',
               }}
+              sx={{marginTop: '6px'}}
             >
-              <HexColorPicker color={color} onChange={setColor} />
+              <HexColorPicker color={color} onChange={handleColorChange} />
             </Popover>
           </div>
         <Chip
