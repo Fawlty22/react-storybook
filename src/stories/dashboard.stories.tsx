@@ -1,5 +1,5 @@
 // src/stories/Dashboard.stories.tsx
-import Dashboard from '../components/dashboard';
+import Dashboard from '../pages/dashboard';
 import { MemoryRouter } from 'react-router-dom';
 
 export default {

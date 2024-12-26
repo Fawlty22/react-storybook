@@ -1,6 +1,6 @@
 import { useState, useEffect} from 'react'
 import './App.css'
-import Dashboard from './components/dashboard'
+import Dashboard from './pages/dashboard'
 import Header from './components/header'
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
